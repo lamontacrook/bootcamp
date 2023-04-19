@@ -1,26 +1,28 @@
-# Your Project's Title...
-Your project's description...
+# NGC Bootcamp
 
-## Environments
-- Preview: https://main--{repo}--{owner}.hlx.page/
-- Live: https://main--{repo}--{owner}.hlx.live/
+## Setting up Respository
 
-## Installation
+This tutorial will get you up-and-running with a new AEM Franklin project. In 10 - 20 minutes, you will have created your own site and be able to create, preview, and publish your own content, styling, and add new blocks.
 
-```sh
-npm i
-```
+Prerequisites:
 
-## Tests
+1. You have a GitHub account, and understand Git basics.
+2. You have a Google account.
+3. You understand the basic HTML, CSS, and JavaScript.
+4. You have Node/npm installed for local development.
 
-```sh
-npm test
-```
+Get Started with the Franklin Boilerplate Repository Template
+The fastest and easiest way to get started following AEM Franklin best practices is to create your repo using the Franklin boilerplate GitHub repo as a template.
 
-## Local development
+1. Navigate to the [boilder plate repository](https://github.com/adobe/helix-project-boilerplate).  Click on Use Template > Create New Repository.
 
-1. Create a new repository based on the `helix-project-boilerplate` template and add a mountpoint in the `fstab.yaml`
-1. Add the [helix-bot](https://github.com/apps/helix-bot) to the repository
-1. Install the [Helix CLI](https://github.com/adobe/helix-cli): `npm install -g @adobe/helix-cli`
-1. Start Franklin Proxy: `hlx up` (opens your browser at `http://localhost:3000`)
-1. Open the `{repo}` directory in your favorite IDE and start coding :)
+[!create-template](./assets/use-template.png)
+
+2.  We now need to add the Franklin Bot by clicking [here](https://github.com/apps/helix-bot/installations/new)
+
+In the Repository access settings of the Franklin bot, make sure you select Only select Repositories (not All Repositories). Then select your newly created repo, and click Save.
+
+3. Let's now go to google drive.  We can also use Sharepoint which will be similar setup.  In google drive we want to create a 
+
+
+
