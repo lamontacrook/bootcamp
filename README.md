@@ -2,9 +2,7 @@
 
 ## Setting up Respository
 
-This tutorial will get you up-and-running with a new AEM Franklin project. In 10 - 20 minutes, you will have created your own site and be able to create, preview, and publish your own content, styling, and add new blocks.
-
-Prerequisites:
+###Prerequisites:
 
 1. You have a GitHub account, and understand Git basics.
 2. You have a Google account.
@@ -20,7 +18,7 @@ The fastest and easiest way to get started following AEM Franklin best practices
 
 2.  We now need to add the Franklin Bot by clicking [here](https://github.com/apps/helix-bot/installations/new)
 
-In the Repository access settings of the Franklin bot, make sure you select Only select Repositories (not All Repositories). Then select your newly created repo, and click Save.
+In the Repository access settings of the Franklin bot, make sure you select *Only Select Repositories* (not All Repositories). Then select your newly created repo, and click Save.
 
 3. Let's now go to google drive.  We can also use Sharepoint which will be similar setup.  In google drive we want to create an new document and name it `index`.
 
@@ -30,13 +28,11 @@ In the Repository access settings of the Franklin bot, make sure you select Only
 
 Explore. Discover. Live.
 
-6. Now let's update `style.css` and add fonts to project.
-
-TBD: How to get fonts?
+6. We can now let's update `style.css` and add fonts to project.  You can download the fonts from (here)[https://github.com/lamontacrook/ngc-bootcamp/tree/lesson-1/styles/fonts].  Simply create a folder under `styles` named `fonts` and save the downloaded fonts.
 
 Import fonts in `lazy-styles.css`.
 
-```
+```css
 @font-face {
   font-display: block;
   font-family: wknd-icon-font;
@@ -67,12 +63,8 @@ Import fonts in `lazy-styles.css`.
 
 In `styles.css` change:
 
-```
+```css
   /* fonts */
   --body-font-family: "wknd-icon-font" !important;
   --heading-font-family: adobe-clean-regular, Arial, Helvetica, sans-serif;
 ```
-
-Now we can update `hero.css` in order to restyle the hero similar to the headless
-
-
