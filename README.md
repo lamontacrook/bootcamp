@@ -50,7 +50,7 @@ Explore. Discover. Live.
 
 7. Click on the newly installed sidekick extension and click *Preview*.  You should now be able to view your page in the browser.
 
-6. We can now start customizing our site. Let's update `style.css` and add fonts to project.  You can download the fonts from (here)[https://github.com/lamontacrook/ngc-bootcamp/tree/lesson-1/styles/fonts].  Simply create a folder under `styles` named `fonts` and save the downloaded fonts.
+6. We can now start customizing our site. Let's update `style.css` and add fonts to project.  You can download the fonts from [here](https://github.com/lamontacrook/ngc-bootcamp/tree/lesson-1/styles/fonts).  Simply create a folder under `styles` named `fonts` and save the downloaded fonts.
 
 Import fonts in `lazy-styles.css`.
 
