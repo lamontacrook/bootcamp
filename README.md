@@ -2,7 +2,9 @@
 
 ## Create Your Own Block
 
-1. Now let's update hero block so that it contains more elements than just an `<h1 />`.
+1. Now let's update hero block so that it contains more elements than just an `<h1 />`.  NGC expects that a block defined in the document have a *.js and *.css file in a directory under `/blocks` directory.  All should share the same name.  You will see that there is a `/hero` folder with a javascript and CSS file under.  Open the `hero.js`.
+
+We need to export the `decorate` function for NGC to be able to call.  This will be the entry point for our code. Enter the following code.
 
 ```javascript
 export default async function decorate(block) {
@@ -10,7 +12,7 @@ export default async function decorate(block) {
 }
 ```
 
-Comment out building auto block in `scripts.js`.
+In order to avoid NGG trying to load the hero autoblock, comment out building auto block in `scripts.js`.
 
 ```javascript
 function buildAutoBlocks(main) {
@@ -25,7 +27,7 @@ function buildAutoBlocks(main) {
 
 Now we are controlling how hero is rendered.
 
-2. Let's now structure the DOM for the block.
+2. Let's now structure the DOM for the block.  We will add a couple of selectors and put the content in a `<div />`.
 
 ```javascript
 export default async function decorate(block) {
@@ -52,6 +54,7 @@ export default async function decorate(block) {
 
 ```css
 main .hero .content {
+  text-align: center;
 ```
 
 Let's also update the styling for the seperator.
@@ -67,3 +70,6 @@ main .hero .content .seperator {
   margin: auto;
 }
 ```
+
+EXTRA: We can add video support.
+
