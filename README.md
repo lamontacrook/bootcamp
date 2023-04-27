@@ -12,17 +12,12 @@ export default async function decorate(block) {
 }
 ```
 
-In order to avoid NGG trying to load the hero autoblock, comment out building auto block in `scripts.js`.
+In order to avoid NGG trying to load the hero autoblock, add the following line in `scripts.js` to check to see if its already defined in the document.
 
 ```javascript
-function buildAutoBlocks(main) {
-  try {
-    // buildHeroBlock(main);
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error('Auto Blocking failed', error);
-  }
-}
+function buildHeroBlock(main) {
+  if(main.querySelector('.hero')) return;
+
 ```
 
 Now we are controlling how hero is rendered.
