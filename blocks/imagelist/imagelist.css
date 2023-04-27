@@ -1,0 +1,34 @@
+main .imagelist {
+  display: flex;
+  flex-direction: row;
+}
+
+main .imagelist .card {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  width: 320px;
+  padding: 20px;
+  margin: 20px;
+  height: 626px;
+}
+
+main .imagelist .card:hover {
+  background-color: #eee;
+}
+
+main .imagelist .card img {
+  object-fit: cover;
+  height: 249px;
+  width: 100%;
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+a:any-link {
+  color: var(--text-color);
+  text-decoration: none;
+}
