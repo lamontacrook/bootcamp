@@ -11,7 +11,6 @@ function getMetadata(name, doc) {
  * @returns {Document} The document
  */
 async function loadFragment(path) {
-  console.log(path);
   if (path && path.startsWith('/')) {
     const resp = await fetch(path);
     if (resp.ok) {
@@ -27,38 +26,63 @@ async function loadFragment(path) {
  */
 export default async function decorate(block) {
 
-  let promises = [];
-  [...block.children].forEach((div) => {
+  [...block.children].forEach(async (div) => {
     const link = div.querySelector('div>div>a');
     const path = link ? link.getAttribute('href') : block.textContent.trim();
-    promises.push(loadFragment(path));
+    const doc = await loadFragment(path);
     div.remove();
+
+    const heroPicture = doc.querySelector('picture');
+    const title = getMetadata('og:title', doc);
+    const desc = getMetadata('og:description', doc);
+
+    const card = document.createElement('div');
+    card.classList.add('card');
+
+    const h2 = document.createElement('h3');
+    h2.textContent = title;
+
+    const p = document.createElement('p');
+    p.textContent = desc;
+
+    card.appendChild(heroPicture);
+    card.appendChild(h2);
+    card.appendChild(p);
+
+    const a = document.createElement('a');  
+    a.href = doc.querySelector('link').href;
+    a.appendChild(card);
+
+    block.appendChild(a);
   });
 
-  Promise.all(promises).then((docs) => {
-    docs.forEach((doc) => {
-      const heroPicture = doc.querySelector('picture');
-      const title = getMetadata('og:title', doc);
-      const desc = getMetadata('og:description', doc);
+  
 
-      const div = document.createElement('div');
-      div.classList.add('card');
+  // Promise.all(promises).then((docs) => {
+  
+    // docs.forEach((doc) => {
+      // const heroPicture = doc.querySelector('picture');
+      // const title = getMetadata('og:title', doc);
+      // const desc = getMetadata('og:description', doc);
 
-      const h2 = document.createElement('h3');
-      h2.textContent = title;
+      // const div = document.createElement('div');
+      // div.classList.add('card');
 
-      const p = document.createElement('p');
-      p.textContent = desc;
+      // const h2 = document.createElement('h3');
+      // h2.textContent = title;
 
-      div.appendChild(heroPicture);
-      div.appendChild(h2);
-      div.appendChild(p);
+      // const p = document.createElement('p');
+      // p.textContent = desc;
 
-      const a = document.createElement('a');
-      a.href = doc.querySelector('link').href;
-      a.appendChild(div);
+      // div.appendChild(heroPicture);
+      // div.appendChild(h2);
+      // div.appendChild(p);
 
-      block.appendChild(a);
-    })
-  });
+      // const a = document.createElement('a');  
+      // a.href = doc.querySelector('link').href;
+      // a.appendChild(div);
+
+      // block.appendChild(a);
+    // })
+  // });
 }
