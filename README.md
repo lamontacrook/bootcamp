@@ -1,16 +1,37 @@
 # NGC Bootcamp
 
-## Setting up Respository
+## Setup Environment
 
-###Prerequisites:
+Setup Environment
+What you need.
 
-1. You have a GitHub account, and understand Git basics.
-2. You have a Google account.
-3. You understand the basic HTML, CSS, and JavaScript.
-4. You have Node/npm installed for local development.
+* [Node.js v16+](https://nodejs.org/en/)
+* [npm 6+](https://www.npmjs.com/)
+* [Git] (https://git-scm.com/)
 
-Get Started with the Franklin Boilerplate Repository Template
-The fastest and easiest way to get started following AEM Franklin best practices is to create your repo using the Franklin boilerplate GitHub repo as a template.
+We would advise using NVM to address having multiple versions of node.js on the same machine.
+
+We will be using Visual Studio Code in the lab. Ensure that you have GitHub Extension installed.
+
+For the session everyone will be creating a site using Google Drive or Sharepoint and Github. Come to the session with your own Github account. We would recommend using a personal account. You may use Google Drive or Sharepoint, however you will need to have the ability to share the folder outside of your organization. A personal Google Drive account might be the easiest.
+
+Ensure that you have privileges to install libraries globally on your computer during the session.
+
+To validate that you have everything setup correctly, open visual studio code an select "Terminal" from menu bar and select "New Terminal". Type
+
+`node -v`
+
+If nodel was correctly installed it will print out the version. For NPM, you can type:
+
+`npm -v`
+
+And for git, you can type:
+
+`git -v`
+
+If everything is installed correctly, all of these commands will repond with the version installed.
+
+##Setup First Project
 
 1. Navigate to the [boilder plate repository](https://github.com/adobe/helix-project-boilerplate).  Click on Use Template > Create New Repository.
 
