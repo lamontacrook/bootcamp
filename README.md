@@ -13,7 +13,7 @@ export default async function decorate(block) {
 
 }
 ```
-2.  To our document we now want to outline the block on in our document.  You will find in our directory 4 articles to use.  Copy them into your google directory and preview them.  Now in our document let's create a table with 5 rows and 1 column.  In the first row we will define the name of our block *imagelist* and then into each line we will paste a link to your newly previewed articles.
+2.  To our document we now want to outline the block on in our document.  You will find in [this](https://drive.google.com/drive/folders/1eEVfGCjSto8oStG6IUZkgg7-YTojbSKD?usp=sharing) directory 4 articles to use.  Copy them into your google directory and preview them.  Now in our document let's create a table with 5 rows and 1 column.  In the first row we will define the name of our block *imagelist* and then into each line we will paste a link to your newly previewed articles.
 
 ![imagelist-block](./assets/imagelist-block.png)
 
