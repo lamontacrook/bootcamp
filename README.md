@@ -52,18 +52,20 @@ function getMetadata(name, doc) {
 
 ```javascript
 export default async function decorate(block) {
-  [...block.children].forEach((div) => {
+  [...block.children].forEach(async (div) => {
     const link = div.querySelector('div>div>a');
     const path = link ? link.getAttribute('href') : block.textContent.trim();
     const doc = await loadFragment(path);
     div.remove();
+
+    
   });
+}
 ```
 
 6. Finally we will want to complete the DOM manipulation for the imagelist.  
 
 We will first get the necessary content, including hero image, title and description.
-
 
 ```javascript
 const heroPicture = doc.querySelector('picture');
