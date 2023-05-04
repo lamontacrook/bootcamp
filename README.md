@@ -69,6 +69,8 @@ To setup the Chrome extension, click the extension while you are on your github 
 
 Explore. Discover. Live.
 
+![index-file](./assets/create-index.png)
+
 7. Click on the newly installed sidekick extension and click *Preview*.  You should now be able to view your page in the browser.
 
 6. We can now start customizing our site. Clone the the newly created repository to your local directory.  When that is complete let's setup NGC to run locally for development.  Run this command from the terminal.
@@ -76,6 +78,8 @@ Explore. Discover. Live.
 `npm install -g @adobe/helix-cli`
 
 Once complete, you can run `hlx up` to start the local server.
+
+NOTE: If you are on windows you may need to install and run in the adminstrator terminal.
 
 7. Let's update `style.css` and add fonts to project.  You can download the fonts from [here](https://github.com/lamontacrook/ngc-bootcamp/tree/lesson-1/styles/fonts).  Simply create a folder under `styles` named `fonts` and save the downloaded fonts.
 
