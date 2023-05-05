@@ -75,7 +75,17 @@ Click *Commit changes*.
 
 To setup the Chrome extension, right click the extension while you are on your github repository and select *Add project*.
 
-4. Now return to your google folder and create a new document named `index`.  To the document, let's add an image and text.  Open assets and navigate to assets > gql-demo > assets and select and asset and click 'e' to edit. Copy the image to your clipboard and paste into the document.
+4. Now return to your google folder and create a new document named `index`.  To the document, let's add an image and text.  Return to the AEM environment from the headless lab and navigate to assets.  
+
+![aem-assets](./assets/aem-assets.png)
+
+Select the folder from your project and the assets folder inside of that. Select the asset you want to choose and click 'e' to edit. 
+
+![select-asset](./assets/select-asset.png)
+
+Copy the image to your clipboard and paste into the document.
+
+![coppy-asset](./assets/copy-asset.png)
 
 5. Not let's add some text that will be the overlay on the image.
 
