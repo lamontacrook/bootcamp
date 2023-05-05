@@ -2,7 +2,11 @@
 
 ## Create Your Own Block
 
-1. We now need to update the document by structuring the document.  Add a table with 1 column and 4 rows.  Into the first row type in hero.  Cut and paste the image into the second line.  Into the 3rd and 4th we want to have our title and add a tagline in the last row - *Join us for your next adventures.*  Change the style for this row to Heading 2.
+1. We now need to update the document by structuring the document.  Add a table with 1 column and 4 rows.  Into the first row type in hero.  Cut and paste the image into the second line.  Into the 3rd and 4th we want to have our title and add a tagline in the last row.
+
+<h2>Join us for your next adventures.</h2>  
+
+Change the style for this row to Heading 2.
 
 ![hero-block](./assets/update-hero-block.png)
 
