@@ -7,7 +7,7 @@ What you need.
 
 * [Node.js v16+](https://nodejs.org/en/)
 * [npm 6+](https://www.npmjs.com/)
-* [Git] (https://git-scm.com/)
+* [Git](https://git-scm.com/)
 
 We would advise using NVM to address having multiple versions of node.js on the same machine.
 
@@ -19,23 +19,33 @@ Ensure that you have privileges to install libraries globally on your computer d
 
 To validate that you have everything setup correctly, open visual studio code an select "Terminal" from menu bar and select "New Terminal". Type
 
-`node -v`
+```bash
+node -v
+```
 
-If nodel was correctly installed it will print out the version. For NPM, you can type:
+If node was correctly installed, it will print out the version. For NPM, you can type:
 
-`npm -v`
+```bash
+npm -v
+```
 
 And for git, you can type:
 
-`git -v`
+```bash
+git -v
+```
 
 If everything is installed correctly, all of these commands will repond with the version installed.
 
-##Setup First Project
+---
+
+## Setup First Project
 
 1. Navigate to the [boilder plate repository](https://github.com/adobe/helix-project-boilerplate).  Click on Use Template > Create New Repository.
 
 ![use-template](./assets/use-template.png)
+
+**NOTE:** The *Use Template* button will not appear if you are not logged into Github.
 
 You may give the repository any name that you'd like.
 
@@ -49,6 +59,8 @@ In the Repository access settings of the Franklin bot, make sure you select *Onl
 
 4. Copy the link to the folder and we will want to use that within our new repository. 
 
+**Note:** Make sure you selecting the link for the folder that contains the index file.
+
 ![share-drive](./assets/share-drive.png)
 
 You can now return to the newly created github repository and add the directory to the `fstab.yaml` file.  Select the file and hit edit to edit the file.
@@ -61,13 +73,14 @@ Click *Commit changes*.
 
 ![pin-it](./assets/pin-extension.webp)
 
-To setup the Chrome extension, click the extension while you are on your github repository and select *Add project*.
+To setup the Chrome extension, right click the extension while you are on your github repository and select *Add project*.
 
 4. Now return to your google folder and create a new document named `index`.  To the document, let's add an image and text.  Open assets and navigate to assets > gql-demo > assets and select and asset and click 'e' to edit. Copy the image to your clipboard and paste into the document.
 
 5. Not let's add some text that will be the overlay on the image.
 
-Explore. Discover. Live.
+
+<h1>Explore. Discover. Live.</h1>
 
 ![index-file](./assets/create-index.png)
 
