@@ -19,6 +19,8 @@ export default async function decorate(block) {
 
 Lastly, we need to insert a horizontal line between our hero block and imagelist.  This will place a hero and imagelist into seperate sections which we will use for our styling.
 
+![section](./assets/hr.png)
+
 3. Before we begin building out block, let's inspect each article.  You will see at the bottom or the article is the metadata table.  This will provide data to our imagelist of the title and the description for the imagelist.  Our imagelist block will use this with the first image of the page to render the imagelist.
 
 4. Now let's start building our imagelist block.  First let's build a function that fetches our article fragments.
@@ -79,7 +81,7 @@ Now let's create new div called `card` and begin adding our content.
 const card = document.createElement('div');
 card.classList.add('card');
 
-const h2 = document.createElement('h3');
+const h2 = document.createElement('h2');
 h2.textContent = title;
 
 const p = document.createElement('p');
@@ -138,7 +140,7 @@ export default async function decorate(block) {
     const card = document.createElement('div');
     card.classList.add('card');
 
-    const h2 = document.createElement('h3');
+    const h2 = document.createElement('h2');
     h2.textContent = title;
 
     const p = document.createElement('p');
