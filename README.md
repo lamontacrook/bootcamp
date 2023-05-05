@@ -94,9 +94,21 @@ Copy the image to your clipboard and paste into the document.
 
 ![index-file](./assets/create-index.png)
 
-7. Click on the newly installed sidekick extension and click *Preview*.  You should now be able to view your page in the browser.
+6. Click on the newly installed sidekick extension and click *Preview*.  You should now be able to view your page in the browser.
 
-6. We can now start customizing our site. Clone the the newly created repository to your local directory.  When that is complete let's setup NGC to run locally for development.  Run this command from the terminal.
+7. We can now start customizing our site. Clone the the newly created repository to your local directory.  
+
+In Visual Studio Code, click the gear icon on the lower left corner and select command pallete.
+
+![command-pallete](./assets/command-pallet.png)
+
+Then choose git: Clone.
+
+![git-clone](./assets/git-clone.png)
+
+Paste into the box the URL from your newly created repository.
+
+8. When that is complete let's setup NGC to run locally for development.  Run this command from the terminal.
 
 `npm install -g @adobe/helix-cli`
 
@@ -104,7 +116,7 @@ Once complete, you can run `hlx up` to start the local server.
 
 NOTE: If you are on windows you may need to install and run in the adminstrator terminal.
 
-7. Let's update `style.css` and add fonts to project.  You can download the fonts from [here](https://github.com/lamontacrook/ngc-bootcamp/tree/lesson-1/styles/fonts).  Simply create a folder under `styles` named `fonts` and save the downloaded fonts.
+9. Let's update `style.css` and add fonts to project.  You can download the fonts from [here](https://github.com/lamontacrook/ngc-bootcamp/tree/lesson-1/styles/fonts).  Simply create a folder under `styles` named `fonts` and save the downloaded fonts.
 
 Import fonts in `lazy-styles.css`.
 
