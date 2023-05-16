@@ -55,34 +55,4 @@ export default async function decorate(block) {
 
     block.appendChild(a);
   });
-
-  
-
-  // Promise.all(promises).then((docs) => {
-  
-    // docs.forEach((doc) => {
-      // const heroPicture = doc.querySelector('picture');
-      // const title = getMetadata('og:title', doc);
-      // const desc = getMetadata('og:description', doc);
-
-      // const div = document.createElement('div');
-      // div.classList.add('card');
-
-      // const h2 = document.createElement('h3');
-      // h2.textContent = title;
-
-      // const p = document.createElement('p');
-      // p.textContent = desc;
-
-      // div.appendChild(heroPicture);
-      // div.appendChild(h2);
-      // div.appendChild(p);
-
-      // const a = document.createElement('a');  
-      // a.href = doc.querySelector('link').href;
-      // a.appendChild(div);
-
-      // block.appendChild(a);
-    // })
-  // });
 }
