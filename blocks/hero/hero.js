@@ -52,6 +52,7 @@ export default async function decorate(block) {
     const doc = await loadFragment(reference.getAttribute('href'));
     const title = getMetadata('og:title', doc);
     const desc = getMetadata('og:description', doc);
+    const preTitle = getMetadata('og:pre-title', doc);
     const image = createOptimizedPicture(doc.querySelector('img').src);
 
     const h3 = document.createElement('h3');

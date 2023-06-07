@@ -110,5 +110,10 @@ main .hero.featured img {
 
 main .hero.featured .content {
   max-width: 500px;
-  padding: 0 22px 22px;
+  padding-right:22px;
+  margin-right: 10px;
+}
+
+main .hero.featured .content > p {
+  font-size: smaller;
 }
