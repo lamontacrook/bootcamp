@@ -1,207 +1,158 @@
 # NGC Bootcamp
 
-## Create Image List Block
+## Setup Environment
 
-We will now create brand new block called image list.  
+Setup Environment
+What you need.
 
-1. Create a new folder un blocks called `/imagelist` with new files under it called `imagelist.css` and `imagelist.js`.
+* [Node.js v16+](https://nodejs.org/en/)
+* [npm 6+](https://www.npmjs.com/)
+* [Git](https://git-scm.com/)
 
-In our new file `imagelist.js` lets add the necessary code that a block requires.
+We would advise using NVM to address having multiple versions of node.js on the same machine.
 
-```javascript
-export default async function decorate(block) {
+We will be using Visual Studio Code in the lab. Ensure that you have GitHub Extension installed.
 
-}
-```
-2.  To our document we now want to outline the block on in our document.  You will find in [this](https://drive.google.com/drive/folders/1eEVfGCjSto8oStG6IUZkgg7-YTojbSKD?usp=sharing) directory 4 articles to use.  Copy them into your google directory and preview them.  Now in our document let's create a table with 5 rows and 1 column.  In the first row we will define the name of our block *imagelist* and then into each line we will paste a link to your newly previewed articles.
+For the session everyone will be creating a site using Google Drive or Sharepoint and Github. Come to the session with your own Github account. We would recommend using a personal account. You may use Google Drive or Sharepoint, however you will need to have the ability to share the folder outside of your organization. A personal Google Drive account might be the easiest.
 
-![imagelist-block](./assets/imagelist-block.png)
+Ensure that you have privileges to install libraries globally on your computer during the session.
 
-Lastly, we need to insert a horizontal line between our hero block and imagelist.  This will place a hero and imagelist into seperate sections which we will use for our styling.
+To validate that you have everything setup correctly, open visual studio code an select "Terminal" from menu bar and select "New Terminal". Type
 
-![section](./assets/hr.png)
-
-3. Before we begin building out block, let's inspect each article.  You will see at the bottom or the article is the metadata table.  This will provide data to our imagelist of the title and the description for the imagelist.  Our imagelist block will use this with the first image of the page to render the imagelist.
-
-4. Now let's start building our imagelist block.  First let's build a function that fetches our article fragments.
-
-```javascript
-async function loadFragment(path) {
-  if (path && path.startsWith('/')) {
-    const resp = await fetch(path);
-    if (resp.ok) {
-      const parser = new DOMParser();
-      return parser.parseFromString(await resp.text(), 'text/html');
-    }
-  }
-  return null;
-}
+```bash
+node -v
 ```
 
-This function will take a path, fetch the article with that path and then return the content.
+If node was correctly installed, it will print out the version. For NPM, you can type:
 
-4. Next we need to build a function that will grab the metadata from articles.
-
-```javascript
-function getMetadata(name, doc) {
-  const attr = name && name.includes(':') ? 'property' : 'name';
-  const meta = [...doc.head.querySelectorAll(`meta[${attr}="${name}"]`)].map((m) => m.content).join(', ');
-  return meta || '';
-}
+```bash
+npm -v
 ```
 
-5. Now we will call this new function inside of our decorate entry point.  We will loop through the rows and grab the href of each link and then pass it to our `loadFragment()` function.
+And for git, you can type:
 
-```javascript
-export default async function decorate(block) {
-  [...block.children].forEach(async (div) => {
-    const link = div.querySelector('div>div>a');
-    const path = link ? link.getAttribute('href') : block.textContent.trim();
-    const doc = await loadFragment(path);
-    div.remove();
-
-    
-  });
-}
+```bash
+git -v
 ```
 
-6. Finally we will want to complete the DOM manipulation for the imagelist.  
+If everything is installed correctly, all of these commands will repond with the version installed.
 
-We will first get the necessary content, including hero image, title and description.
+---
 
-```javascript
-const heroPicture = doc.querySelector('picture');
-const title = getMetadata('og:title', doc);
-const desc = getMetadata('og:description', doc);
-```
+## Setup First Project
 
-Now let's create new div called `card` and begin adding our content.
+1. Navigate to the [boilder plate repository](https://github.com/adobe/helix-project-boilerplate).  Click on Use Template > Create New Repository.
 
-```javascript
-const card = document.createElement('div');
-card.classList.add('card');
+![use-template](./assets/use-template.png)
 
-const h2 = document.createElement('h2');
-h2.textContent = title;
+**NOTE:** The *Use Template* button will not appear if you are not logged into Github.
 
-const p = document.createElement('p');
-p.textContent = desc;
+You may give the repository any name that you'd like.
 
-card.appendChild(heroPicture);
-card.appendChild(h2);
-card.appendChild(p);
-```
+![create-template](./assets/create-repository.png)
 
-Lastly, let's make this card a hyperlink to the article.
+2.  We now need to add the Franklin Bot by clicking [here](https://github.com/apps/helix-bot/installations/new)
 
-```javascript
-const a = document.createElement('a');  
-a.href = doc.querySelector('link').href;
-a.appendChild(card);
-```
+In the Repository access settings of the Franklin bot, make sure you select *Only Select Repositories* (not All Repositories). Then select your newly created repo, and click Save.
 
-Finally, we will add this to the block.
+3. Let's now go to google drive.  We can also use Sharepoint which will be similar setup.  In google drive we want to create an new folder and share that folder with `helix@adobe.com`.
 
-```javascript
-block.appendChild(a);
-```
+4. Copy the link to the folder and we will want to use that within our new repository. 
 
-For reference this is the complete code for the block.
+**Note:** Make sure you selecting the link for the folder that contains the index file.
 
-```javascript
-function getMetadata(name, doc) {
-  const attr = name && name.includes(':') ? 'property' : 'name';
-  const meta = [...doc.head.querySelectorAll(`meta[${attr}="${name}"]`)].map((m) => m.content).join(', ');
-  return meta || '';
-}
+![share-drive](./assets/share-drive.png)
 
-async function loadFragment(path) {
-  if (path && path.startsWith('/')) {
-    const resp = await fetch(path);
-    if (resp.ok) {
-      const parser = new DOMParser();
-      return parser.parseFromString(await resp.text(), 'text/html');
-    }
-  }
-  return null;
-}
+You can now return to the newly created github repository and add the directory to the `fstab.yaml` file.  Select the file and hit edit to edit the file.
 
-export default async function decorate(block) {
-  [...block.children].forEach(async (div) => {
-    const link = div.querySelector('div>div>a');
-    const path = link ? link.getAttribute('href') : block.textContent.trim();
-    const doc = await loadFragment(path);
-    div.remove();
+![fstab-update](./assets/fstab-update.png)
 
-    const heroPicture = doc.querySelector('picture');
-    const title = getMetadata('og:title', doc);
-    const desc = getMetadata('og:description', doc);
+Click *Commit changes*.
 
-    const card = document.createElement('div');
-    card.classList.add('card');
+5. We can now install the sidekick [chrome extension](https://chrome.google.com/webstore/detail/helix-sidekick-beta/ccfggkjabjahcjoljmgmklhpaccedipo).  After add the extension to Chrome, don't forget to pin it.
 
-    const h2 = document.createElement('h2');
-    h2.textContent = title;
+![pin-it](./assets/pin-extension.webp)
 
-    const p = document.createElement('p');
-    p.textContent = desc;
+To setup the Chrome extension, right click the extension while you are on your github repository and select *Add project*.
 
-    card.appendChild(heroPicture);
-    card.appendChild(h2);
-    card.appendChild(p);
+4. Now return to your google folder and create a new document named `index`.  To the document, let's add an image and text.  Return to the AEM environment from the headless lab and navigate to assets.  
 
-    const a = document.createElement('a');  
-    a.href = doc.querySelector('link').href;
-    a.appendChild(card);
+![aem-assets](./assets/aem-assets.png)
 
-    block.appendChild(a);
-  });
-}
-```
+Select the folder from your project and the assets folder inside of that. Select the asset you want to choose and click 'e' to edit. 
 
-7. Finally, let's style our imagelist.
+![select-asset](./assets/select-asset.png)
+
+Copy the image to your clipboard and paste into the document.
+
+![coppy-asset](./assets/copy-asset.png)
+
+5. Not let's add some text that will be the overlay on the image.
+
+
+<h1>Explore. Discover. Live.</h1>
+
+![index-file](./assets/create-index.png)
+
+6. Click on the newly installed sidekick extension and click *Preview*.  You should now be able to view your page in the browser.
+
+7. We can now start customizing our site. Clone the the newly created repository to your local directory.  
+
+In Visual Studio Code, click the gear icon on the lower left corner and select command pallete.
+
+![command-pallete](./assets/command-pallet.png)
+
+Then choose git: Clone.
+
+![git-clone](./assets/git-clone.png)
+
+Paste into the box the URL from your newly created repository.
+
+8. When that is complete let's setup NGC to run locally for development.  Run this command from the terminal.
+
+`npm install -g @adobe/helix-cli`
+
+Once complete, you can run `hlx up` to start the local server.
+
+NOTE: If you are on windows you may need to install and run in the adminstrator terminal.
+
+9. Let's update `style.css` and add fonts to project.  You can download the fonts from [here](https://github.com/lamontacrook/ngc-bootcamp/tree/lesson-1/styles/fonts).  Simply create a folder under `styles` named `fonts` and save the downloaded fonts.
+
+Import fonts in `lazy-styles.css`.
 
 ```css
-main .imagelist {
-  display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
-  max-width: 1920px;
+@font-face {
+  font-display: block;
+  font-family: wknd-icon-font;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./fonts/wknd-icon-font.ttf) format("truetype"), 
+    url(./fonts/wknd-icon-font.woff) format("woff"), 
+    url(./fonts/wknd-icon-font.svg#wknd-icon-font) format("svg")
 }
 
-main .imagelist .card {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-  width: 320px;
-  padding: 20px;
-  margin: 20px;
-  height: 626px;
+@font-face {
+  font-display: block;
+  font-family: adobe-clean-regular;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./fonts/AdobeClean-Regular.ttf) format("truetype")
 }
 
-main .imagelist .card:hover {
-  background-color: #eee;
+@font-face {
+  font-display: block;
+  font-family: adobe-clean-light;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./fonts/AdobeClean-Light.ttf) format("truetype")
 }
 
-main .imagelist .card img {
-  object-fit: cover;
-  object-position: 0 25%;
-  height: 249px;
-  width: 100%;
-}
+```
 
-main .imagelist a:hover {
-  text-decoration: none;
-  color: var(--text-color);
-}
+In `styles.css` change:
 
-main .imagelist-wrapper {
-  padding: unset;
-  max-width: unset;
-}
-
-main .imagelist a:any-link {
-  color: var(--text-color);
-  text-decoration: none;
-}
+```css
+  /* fonts */
+  --body-font-family: "wknd-icon-font" !important;
+  --heading-font-family: adobe-clean-regular, Arial, Helvetica, sans-serif;
 ```
