@@ -12,15 +12,12 @@
 
  :root {
   /* colors */
-  --link-color: #035fe6;
-  --link-hover-color: #136ff6;
   --background-color: #fff;
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
-  --text-color: #000;
-
+  
   /* fonts */
-  --body-font-family: "wknd-icon-font" !important;
+  --body-font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", adobe-clean-regular, "wknd-icon-font" !important;
   --heading-font-family: adobe-clean-regular, Arial, Helvetica, sans-serif;
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
@@ -38,7 +35,22 @@
   --heading-font-size-xs: 18px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 89px;
+
+  --main-accent-color:#ffc719;
+  --highlight-background-color: red;
+  --main-text-color: rgba(41,41,41);
+  --main-color:#fff;
+  --main-color-opacity:rgba(4,25,45,.55);
+  --main-color-opacity-lighter:rgba(4,25,45,.45);
+  --main-color-opacity-darker:rgba(4,25,45,.95);
+  --main-light-background: #EBEBEB;
+  --font-family: "wknd-icon-font" !important;
+  --main-nav-link-color: #fff;
+  --main-nav-color: red;
+  --dark-nav: rgba(41,41,41);
+  --main-dark-background: rgba(41,41,41);
+  --light-nav: #fff;
 
 }
 
