@@ -86,6 +86,3 @@ main .hero .content .seperator {
   margin: auto;
 }
 ```
-
-EXTRA: We can add video support.
-
