@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
- :root {
+:root {
   /* colors */
   --link-color: #035fe6;
   --link-hover-color: #136ff6;
@@ -20,8 +20,8 @@
   --text-color: #000;
 
   /* fonts */
-  --body-font-family: 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
-  --heading-font-family: var(--body-font-family);
+  --body-font-family: "adobe-clean-light", adobe-clean, "Trebuchet MS", sans-serif;
+  --heading-font-family: adobe-clean-regular, Arial, Helvetica, sans-serif;
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
@@ -40,6 +40,147 @@
   /* nav height */
   --nav-height: 64px;
 
+  --code-font-family: "Source Code Pro", source-code-pro, "Courier New", monospace;
+  --type-body-l-size: 20px;
+  --type-body-l-lh: 30px;
+  --type-body-m-size: 18px;
+  --type-body-m-lh: 27px;
+  --type-body-s-size: 16px;
+  --type-body-s-lh: 1.5;
+  --type-body-xs-size: 14px;
+  --type-body-xs-lh: 21px;
+  --type-body-xxs-size: 12px;
+  --type-body-xxs-lh: 1.5;
+  --type-body-xxxs-lh: 15px;
+  --type-detail-all-weight: 700;
+  --type-detail-m-transform: uppercase;
+  --type-detail-xl-size: 20px;
+  --type-detail-xl-lh: 1.75;
+  --type-detail-l-size: 16px;
+  --type-detail-l-lh: 1.5;
+  --type-detail-m-size: 12px;
+  --type-detail-m-lh: 15px;
+  --body-line-height: 1.6875;
+  --spacing-xxxs: 4px;
+  --spacing-xxs: 8px;
+  --spacing-xs: 16px;
+  --spacing-s: 24px;
+  --spacing-m: 32px;
+  --spacing-ml: 40px;
+  --spacing-l: 48px;
+  --spacing-xl: 56px;
+  --spacing-xxl: 80px;
+  --spacing-xxxl: 104px;
+  --spectrum-blue: #1473e6;
+  --brand-color-purple: #8a8df3;
+  --brand-color-dark-purple: #7473e4;
+  --brand-color-pink: #f1bce7;
+  --brand-color-green-yellow: #ebf3a4;
+  --highlight-gradient: linear-gradient(75deg, #db3278, #ee732f);
+  --color-black: #000;
+  --color-gray-100: rgb(10% 10% 10%);
+  --color-gray-200: rgb(20% 20% 20%);
+  --color-gray-500: rgb(50% 50% 50%);
+  --color-white: #fff;
+  --color-info-accent: inherit;
+  --color-info-accent-hover: inherit;
+  --color-info-accent-down: inherit;
+  --color-info-primary: inherit;
+  --color-info-primary-hover: inherit;
+  --color-info-primary-down: inherit;
+  --color-info-secondary: inherit;
+  --color-info-secondary-hover: inherit;
+  --color-info-secondary-down: inherit;
+  --color-info-accent-reverse: inherit;
+  --color-info-accent-reverse-down: inherit;
+  --color-font-grey: #2c2c2c;
+  --color-light-grey-600: #686868;
+  --color-eyebrow-light-grey: #444;
+  --color-eyebrow-highlight: #6870ec;
+  --color-accent-blue: #6870ec;
+  --color-accent-highlight-yellow: #e3fa8c;
+  --color-accent-pink-bg: #f0b2f2;
+  --color-accent-pink-content: #88008d;
+  --color-accent-purple-bg: #474eb8;
+  --color-accent-purple-content: #e2e4ff;
+  --color-accent-lightgreen-bg: #e1fa82;
+  --color-accent-lightgreen-content: #3b5700;
+  --color-accent-yellow-bg: #f5e66b;
+  --color-accent-yellow-content: #7f6000;
+  --bg-color-lightgrey: #f8f8f8;
+  --bg-color-grey: #e8e8e8;
+  --bg-color-grey-2: #d6d6d6;
+  --overlay-curtain-bg-color: rgb(0 0 0 / 60%);
+  --overlay-curtain-bg-filter: blur(0.05em);
+  --code-bg-color: #f1f1f1;
+  --grid-mobile-container-width: 88%;
+  --grid-tablet-container-width: 83%;
+  --grid-laptop-container-width: 90%;
+  --grid-desktop-container-width: 1200px;
+  --header-container-width: 1440px;
+  --header-container-tablet-x-padding: 24px;
+  --header-container-desktop-x-padding: 20px;
+  --input-border-radius: 4px;
+  --image-border-radius-m: 8px;
+  --image-border-radius-l: 16px;
+  --image-border-radius-xl: 24px;
+  --image-border-radius-xxl: 30px;
+  --nav-height: 65px;
+  --color-checkerboard-bg-border: rgb(214 213 213 / 40%);
+  --color-checkerboard-bg-fill: transparent;
+  --checkerboard-background: linear-gradient(var(--color-checkerboard-bg-border) 1px,
+      transparent 1px),
+    linear-gradient(90deg,
+      var(--color-checkerboard-bg-border) 1px,
+      transparent 1px),
+    linear-gradient(45deg,
+      var(--color-checkerboard-bg-fill) 50%,
+      var(--color-checkerboard-bg-fill) 51%);
+  --checkerboard-background-size: clamp(15px, 3vw, 25px) clamp(15px, 3vw, 25px);
+  --sidebar-z-index: 9998;
+  --nav-z-index: 9999;
+  --image-filter-drop-shadow-small: drop-shadow(10px 25px 50px rgba(0 0 0 / 10%));
+  --cubic-bezier-1: cubic-bezier(0.802, 0, 0.2, 1);
+  --cubic-bezier-2: cubic-bezier(0.23, 1, 0.32, 1);
+  --transition-cubic-bezier-1: all 0.4s var(--cubic-bezier-2);
+  --transition-ease-in-out: all 0.4s ease-in-out;
+  --fade-transition: all 0.6s var(--cubic-bezier-1);
+  --slide-text-transition: all 0.8s var(--cubic-bezier-1);
+  --slide-reveal-transition-slow: all 1s var(--cubic-bezier-1);
+  --circular-1-clip-path-init: circle(50% at 0 50%);
+  --circular-1-clip-path-full: circle(120% at 0 50%);
+  --breadcrumb-height: 47px;
+  --type-heading-all-weight: 700;
+  --type-heading-xxxl-size: clamp(60px, 4.2vw, 80px);
+  --type-heading-xxxl-lh: 0.9;
+  --type-heading-xxl-size: 44px;
+  --type-heading-xxl-lh: 1;
+  --type-heading-xl-size: 36px;
+  --type-heading-xl-lh: 45px;
+  --type-heading-l-size: 28px;
+  --type-heading-l-lh: 35px;
+  --type-heading-m-size: 24px;
+  --type-heading-m-lh: 30px;
+  --type-heading-s-size: 20px;
+  --type-heading-s-lh: 25px;
+  --type-heading-xs-size: 18px;
+  --type-heading-xs-lh: 22px;
+  --circular-icon-tag-size: 50px;
+  --circular-number-tag-size: 60px;
+  --card-border-radius-l: 24px;
+  --side-navigation-bar-gap: clamp(var(--spacing-m),
+      3.2vw,
+      var(--spacing-ml));
+  --navmenu-background-color: var(--bg-color-lightgrey);
+  --mobile-searchbar-height: 72px;
+  --nav-animation-transition: all 0.2s ease-in-out;
+  --curtain-width: calc(100% - var(--grid-tablet-container-width));
+  --footer-footer-nav-title-section-border: 2px solid #4b4b4b;
+  --color-nav-sidebar-title: #2c2c2c;
+  --color-nav-sidebar-subtitle: #4b4b4b;
+  --nav-sidebar-indent-spacing: var(--spacing-xxxs);
+  --nav-sidebar-link-border-radius: 4px;
+  --nav-sidebar-transition: all 0.2s ease-in-out;
 }
 
 @media (min-width: 900px) {
@@ -71,8 +212,12 @@ header {
   height: var(--nav-height);
 }
 
-h1, h2, h3,
-h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--heading-font-family);
   font-weight: 600;
   line-height: 1.25;
@@ -81,14 +226,36 @@ h4, h5, h6 {
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-h1 { font-size: var(--heading-font-size-xxl) }
-h2 { font-size: var(--heading-font-size-xl) }
-h3 { font-size: var(--heading-font-size-l) }
-h4 { font-size: var(--heading-font-size-m) }
-h5 { font-size: var(--heading-font-size-s) }
-h6 { font-size: var(--heading-font-size-xs) }
+h1 {
+  font-size: var(--heading-font-size-xxl)
+}
 
-p, dl, ol, ul, pre, blockquote {
+h2 {
+  font-size: var(--heading-font-size-xl)
+}
+
+h3 {
+  font-size: var(--heading-font-size-l)
+}
+
+h4 {
+  font-size: var(--heading-font-size-m)
+}
+
+h5 {
+  font-size: var(--heading-font-size-s)
+}
+
+h6 {
+  font-size: var(--heading-font-size-xs)
+}
+
+p,
+dl,
+ol,
+ul,
+pre,
+blockquote {
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -100,12 +267,15 @@ hr {
   border-bottom: 1px solid var(--overlay-background-color);
 }
 
-code, pre, samp {
+code,
+pre,
+samp {
   font-family: var(--fixed-font-family);
   font-size: var(--body-font-size-s);
 }
 
-code, samp {
+code,
+samp {
   padding: .125em;
 }
 
@@ -132,7 +302,8 @@ a:hover {
 }
 
 /* buttons */
-a.button:any-link, button {
+a.button:any-link,
+button {
   font-family: var(--body-font-family);
   display: inline-block;
   box-sizing: border-box;
@@ -152,17 +323,22 @@ a.button:any-link, button {
   border-radius: 30px;
 }
 
-a.button:hover, a.button:focus, button:hover, button:focus  {
+a.button:hover,
+a.button:focus,
+button:hover,
+button:focus {
   background-color: var(--link-hover-color);
   cursor: pointer;
 }
 
-button:disabled, button:disabled:hover {
+button:disabled,
+button:disabled:hover {
   background-color: var(--overlay-background-color);
   cursor: unset;
 }
 
-a.button.secondary, button.secondary {
+a.button.secondary,
+button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
   color: var(--text-color)
@@ -231,7 +407,7 @@ main .section {
 }
 
 @media (min-width: 900px) {
-  .section > div {
+  .section>div {
     max-width: 1200px;
     margin: auto;
   }

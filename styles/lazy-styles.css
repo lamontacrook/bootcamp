@@ -1,1 +1,17 @@
 /* below the fold CSS goes here */
+
+@font-face {
+  font-display: block;
+  font-family: adobe-clean-regular;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./fonts/AdobeClean-Regular.ttf) format("truetype")
+}
+
+@font-face {
+  font-display: block;
+  font-family: adobe-clean-light;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./fonts/AdobeClean-Light.ttf) format("truetype")
+}

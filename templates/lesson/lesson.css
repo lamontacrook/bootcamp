@@ -1,0 +1,42 @@
+.lesson .nav-brand img {
+  width: 45px;
+}
+
+.lesson main {
+  background-color: transparent;
+}
+
+.lesson main .hero h1 {
+  font-family: var(--body-font-family);
+  box-sizing: border-box;
+  margin: 0;
+  scroll-margin: calc(var(--nav-height) + 1em);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  font-size: var(--type-heading-xxl-size);
+  line-height: 55px;
+  margin-top: 0;
+  margin-left: var(--spacing-ml);
+}
+
+.lesson main .hero h2 {
+  color:var(--color-white);
+  font-family: var(--body-font-family);
+  box-sizing: border-box;
+  margin: 0;
+  font-size: var(--type-heading-l-size);
+  line-height: var(--type-heading-xl-lh);
+  margin-left: var(--spacing-ml);
+  font-weight: 700;
+  letter-spacing: 0;
+  margin-top: 0;
+}
+
+.lesson main .hero {
+  height: 393px;
+}
+
+.lesson .default-content-wrapper {
+  max-width: 1200px;
+  margin: auto;
+}
