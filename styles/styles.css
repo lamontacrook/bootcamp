@@ -21,7 +21,7 @@
 
   /* fonts */
   --body-font-family: "adobe-clean-light", adobe-clean, "Trebuchet MS", sans-serif;
-  --heading-font-family: adobe-clean-regular, Arial, Helvetica, sans-serif;
+  --heading-font-family: adobe-clean-regular, arial, helvetica, sans-serif;
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
@@ -39,7 +39,6 @@
 
   /* nav height */
   --nav-height: 64px;
-
   --code-font-family: "Source Code Pro", source-code-pro, "Courier New", monospace;
   --type-body-l-size: 20px;
   --type-body-l-lh: 30px;
@@ -125,7 +124,6 @@
   --image-border-radius-l: 16px;
   --image-border-radius-xl: 24px;
   --image-border-radius-xxl: 30px;
-  --nav-height: 65px;
   --color-checkerboard-bg-border: rgb(214 213 213 / 40%);
   --color-checkerboard-bg-fill: transparent;
   --checkerboard-background: linear-gradient(var(--color-checkerboard-bg-border) 1px,

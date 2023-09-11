@@ -11,7 +11,7 @@ import {
   waitForLCP,
   loadBlocks,
   loadCSS,
-  getMetadata
+  getMetadata,
 } from './lib-franklin.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
@@ -21,7 +21,7 @@ const LCP_BLOCKS = []; // add your LCP blocks to the list
  * @param {Element} main The container element
  */
 function buildHeroBlock(main) {
-  if(main.querySelector('.hero')) return;
+  if (main.querySelector('.hero')) return;
   const h1 = main.querySelector('h1');
   const picture = main.querySelector('picture');
   // eslint-disable-next-line no-bitwise

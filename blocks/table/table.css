@@ -1,0 +1,30 @@
+main .table {
+  display: table;                
+  background-color: #eee;         
+  border: 1px solid #666;         
+  border-spacing: 2px; /* cellspacing:poor IE support for  this */
+  margin:auto;
+  font-size: 10px;
+  width: 800px;
+}
+
+main .table > div {
+  display: table-row;
+  width: auto;
+  clear: both;
+  border-bottom: 1px solid #555;
+}
+
+main .table > div > div {
+  float: left; /* fix for  buggy browsers */
+  display: table-column;         
+  width: 150px;         
+}
+
+main .table > div:nth-child(1) {
+  font-weight: bold;
+}
+
+main .table > div > div:nth-last-child(1) {
+  width: 220px;
+}

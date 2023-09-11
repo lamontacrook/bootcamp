@@ -36,7 +36,54 @@
   height: 393px;
 }
 
-.lesson .default-content-wrapper {
+.lesson .sidebar {
+  display: grid;
+  grid-template-columns: 300px auto;
+  grid-template-areas:
+    'navigation content';
   max-width: 1200px;
   margin: auto;
+  grid-column-gap: 36px;
+}
+
+.lesson .sidebar .navigation {
+  grid-area: navigation;
+  background-color: #F8F8F8;
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 16px;
+  max-width: var(--grid-desktop-container-width);
+  margin-top: 45px;
+  font-family: adobe-clean-light, "Trebuchet MS", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  width: 280px;
+  padding: 42px 29px;
+}
+
+.lesson .sidebar .navigation ul {
+  list-style: none;
+  padding-left: 0;
+}
+/* 
+Font Details:
+
+font-family: "Adobe Clean", adobe-clean, "Trebuchet MS", sans-serif
+font-size: 14px
+font-style: normal
+font-variant-caps: normal
+font-variant-east-asian: normal
+font-variant-ligatures: normal
+font-variant-numeric: normal
+font-weight: 400 */
+
+
+.lesson .sidebar .content {
+  grid-area: content;
+  max-width: 800px;
+}
+
+.lesson .sidebar .content img {
+  width: 100%;
+  max-width: 700px;
 }
