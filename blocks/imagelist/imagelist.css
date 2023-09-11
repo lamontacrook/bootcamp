@@ -1,7 +1,6 @@
 main .imagelist {
   display: flex;
   flex-direction: row;
-  overflow-x: scroll;
   max-width: 1920px;
   justify-content: center;
 }
