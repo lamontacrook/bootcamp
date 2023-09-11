@@ -3,14 +3,12 @@ export default async function decorate(block) {
 
   if (Object.keys(content).length > 0) {
     let picture = '';
-    let contentDiv = document.createElement('div');
+    const contentDiv = document.createElement('div');
     contentDiv.classList.add('content');
 
     [...content].forEach((div) => {
-      if (div.querySelector(':has(picture'))
-        picture = div.querySelector(':has(picture');
-      else
-        contentDiv.appendChild(div);
+      if (div.querySelector(':has(picture')) picture = div.querySelector(':has(picture');
+      else contentDiv.appendChild(div);
     });
 
     const span = document.createElement('span');
