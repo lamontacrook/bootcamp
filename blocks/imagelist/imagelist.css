@@ -9,7 +9,6 @@ main .imagelist .card {
   display: flex;
   flex-direction: column;
   max-width: 400px;
-  width: 400px;
   padding: 20px;
   margin: 20px;
   height: 626px;
