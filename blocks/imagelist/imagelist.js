@@ -1,9 +1,4 @@
-
-function getMetadata(name, doc) {
-  const attr = name && name.includes(':') ? 'property' : 'name';
-  const meta = [...doc.head.querySelectorAll(`meta[${attr}="${name}"]`)].map((m) => m.content).join(', ');
-  return meta || '';
-}
+import { getMetadata } from '../../scripts/lib-franklin.js';
 
 /**
  * Loads a fragment.
@@ -25,7 +20,6 @@ async function loadFragment(path) {
  * @param {HTMLElement} block The header block element
  */
 export default async function decorate(block) {
-
   [...block.children].forEach(async (div) => {
     const link = div.querySelector('div>div>a');
     const path = link ? link.getAttribute('href') : block.textContent.trim();
@@ -49,7 +43,7 @@ export default async function decorate(block) {
     card.appendChild(h2);
     card.appendChild(p);
 
-    const a = document.createElement('a');  
+    const a = document.createElement('a');
     a.href = doc.querySelector('link').href;
     a.appendChild(card);
 
