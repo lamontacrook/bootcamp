@@ -14,15 +14,15 @@ main .highlight button{
   right: 20px;
 }
 
+main .highlight pre {
+  overflow-y: auto;
+}
+
 main .highlight.text pre {
   overflow-y: hidden;
   white-space: pre-wrap;
 }
 
-main .highlight pre {
-  overflow-y: auto;
-}
-
-main .highlight pre > code {
+main .highlight code {
   font-size: var(--type-detail-m-size);
 }
