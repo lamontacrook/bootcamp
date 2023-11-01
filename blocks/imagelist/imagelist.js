@@ -30,6 +30,7 @@ export default async function decorate(block) {
     const link = div.querySelector('div>div>a');
     const path = link ? link.getAttribute('href') : block.textContent.trim();
     const doc = await loadFragment(path);
+    console.log(path);
     div.remove();
 
     // const heroPicture = doc.querySelector('picture');
