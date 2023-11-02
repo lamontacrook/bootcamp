@@ -26,35 +26,49 @@ async function loadFragment(path) {
  * @param {HTMLElement} block The header block element
  */
 export default async function decorate(block) {
-  [...block.children].forEach(async (div) => {
+  const promises = [...block.children].map((div) => {
     const link = div.querySelector('div>div>a');
     const path = link ? link.getAttribute('href') : block.textContent.trim();
-    const doc = await loadFragment(path);
-    console.log(path);
-    div.remove();
+    div.setAttribute('data-path', path);
+    link.remove();
+    return (path && path.startsWith('/')) && fetch(path);
+  });
+  Promise.all(promises).then((results) => {
+    results.forEach(async (resp) => {
+      if (resp.ok) {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(await resp.text(), 'text/html');
+        const title = getMetadata('og:title', doc);
+        const desc = getMetadata('og:description', doc);
+        const image = getMetadata('og:image', doc);
+        const heroPicture = createOptimizedPicture(image);
+        const url = getMetadata('og:url', doc);
+        const { pathname } = new URL(url);
+       
+        const card = document.createElement('div');
+        card.classList.add('card');
 
-    // const heroPicture = doc.querySelector('picture');
-    const title = getMetadata('og:title', doc);
-    const desc = getMetadata('og:description', doc);
-    const image = getMetadata('og:image', doc);
-    const heroPicture = createOptimizedPicture(image);
+        const h2 = document.createElement('h3');
+        h2.textContent = title;
 
-    const card = document.createElement('div');
-    card.classList.add('card');
+        const p = document.createElement('p');
+        p.textContent = desc;
 
-    const h2 = document.createElement('h3');
-    h2.textContent = title;
+        card.appendChild(heroPicture);
 
-    const p = document.createElement('p');
-    p.textContent = desc;
+        const content = document.createElement('div');
+        content.classList.add('content-column');
+        content.appendChild(h2);
+        content.appendChild(p);
 
-    card.appendChild(heroPicture);
-    card.appendChild(h2);
-    card.appendChild(p);
+        card.append(content);
 
-    const a = document.createElement('a');
-    a.href = doc.querySelector('link').href;
-    a.appendChild(card);
-    block.append(a);
+        const a = document.createElement('a');
+        a.href = doc.querySelector('link').href;
+        a.appendChild(card);
+        const pathCard = block.querySelector(`[data-path='${pathname}']`);       
+        pathCard && pathCard.appendChild(a);
+      }
+    });
   });
 }
