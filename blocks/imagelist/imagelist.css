@@ -7,15 +7,26 @@ main .imagelist {
 
 main .imagelist .card {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   column-gap: 24px;
   flex-grow: 1;
   padding: 20px;
   margin: 20px;
 }
 
-main .imagelist h3 {
+main .imagelist .content-column h3 {
   font-size: var(--heading-font-size-m);
+  line-height: 1;
+  margin: 2px 0 7px;
+}
+
+main .imagelist p {
+  font-size: var(--body-font-size-m);
+}
+
+main .imagelist .content-column p {
+  margin: 10px 0;
+  font-size: var(--body-font-size-s);
 }
 
 main .imagelist p::before {
@@ -23,16 +34,12 @@ main .imagelist p::before {
   white-space: pre;
 }
 
-main .imagelist p {
-  font-size: var(--body-font-size-m);
-}
-
 main .imagelist .card:hover {
   background-color: #eee;
 }
 
 main .imagelist .card picture {
-  background-color: red;
+  background-color: transparent;
 }
 
 main .imagelist .card img {
@@ -42,6 +49,7 @@ main .imagelist .card img {
 
 main .imagelist .card .content-column {
   width: 100%;
+  padding: 10px 0;
 }
 
 main .imagelist a:hover {
@@ -52,4 +60,16 @@ main .imagelist a:hover {
 main .imagelist a:any-link {
   color: var(--text-color);
   text-decoration: none;
+}
+
+@media (min-width: 600px) {
+  main .imagelist .card {
+    flex-direction: row;
+    margin: 10px 0;
+    padding: 0;
+  }
+
+  main .imagelist .card img {
+    width: 280px;
+  }
 }

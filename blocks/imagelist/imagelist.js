@@ -17,6 +17,8 @@ export default async function decorate(block) {
     link.remove();
     return (path && path.startsWith('/')) && fetch(path);
   });
+
+  const lessonsUL = document.createElement('ul');
   Promise.all(promises).then((results) => {
     results.forEach(async (resp) => {
       if (resp.ok) {
@@ -51,7 +53,17 @@ export default async function decorate(block) {
         a.appendChild(card);
         const pathCard = block.querySelector(`[data-path='${pathname}']`);
         if (pathCard) pathCard.appendChild(a);
+
+        const lessonsList = document.createElement('li');
+        const lessonsAnchor = document.createElement('a');
+        lessonsAnchor.href = doc.querySelector('link').href;
+        lessonsAnchor.textContent = title;
+        lessonsList.append(lessonsAnchor);
+        lessonsUL.append(lessonsList);
       }
     });
+    const navigation = document.querySelector('.navigation');
+    navigation.innerHTML += '<strong>Lessons</strong>';
+    navigation.append(lessonsUL);
   });
 }

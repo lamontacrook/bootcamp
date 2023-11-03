@@ -11,7 +11,6 @@ export default async function decorate(block) {
   [...sidebar.children].forEach((row) => {
     content.append(row);
   });
-  console.log(div);
 
   const ul = document.createElement('ul');
   [...content.querySelectorAll('h3')].forEach((section) => {
