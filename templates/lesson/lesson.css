@@ -36,14 +36,13 @@
   height: 393px;
 }
 
-.lesson .sidebar {
+.lesson .sidebar > div{
   display: grid;
-  grid-template-columns: 300px auto;
+  grid-template-columns: 20% auto;
   grid-template-areas:
     'navigation content';
-  max-width: 1200px;
   margin: auto;
-  grid-column-gap: 36px;
+  grid-column-gap: 46px;
 }
 
 .lesson .sidebar .navigation {
@@ -57,30 +56,20 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  width: 280px;
+  width: 100%;
+  /* max-width: 280px;
+  min-width:140px; */
   padding: 42px 29px;
 }
 
+.lesson .sidebar .content {
+  grid-area: content;
+  width: auto;
+  margin: 0 50px;
+}
 .lesson .sidebar .navigation ul {
   list-style: none;
   padding-left: 0;
-}
-/* 
-Font Details:
-
-font-family: "Adobe Clean", adobe-clean, "Trebuchet MS", sans-serif
-font-size: 14px
-font-style: normal
-font-variant-caps: normal
-font-variant-east-asian: normal
-font-variant-ligatures: normal
-font-variant-numeric: normal
-font-weight: 400 */
-
-
-.lesson .sidebar .content {
-  grid-area: content;
-  max-width: 800px;
 }
 
 .lesson .sidebar .content img {

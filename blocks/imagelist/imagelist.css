@@ -8,10 +8,10 @@ main .imagelist {
 main .imagelist .card {
   display: flex;
   flex-direction: row;
-  /* max-width: 400px; */
+  column-gap: 24px;
+  flex-grow: 1;
   padding: 20px;
   margin: 20px;
-  height: 626px;
 }
 
 main .imagelist h3 {
@@ -32,23 +32,22 @@ main .imagelist .card:hover {
 }
 
 main .imagelist .card picture {
-  /* width: 250px; */
+  background-color: red;
 }
+
 main .imagelist .card img {
   object-fit: cover;
-  /* object-position: 0 25%; */
-  min-width: 250px;
+  max-width: 350px;
+}
+
+main .imagelist .card .content-column {
+  width: 100%;
 }
 
 main .imagelist a:hover {
   text-decoration: none;
   color: var(--text-color);
 }
-
-/* main .imagelist-wrapper {
-  padding: unset;
-  max-width: unset;
-} */
 
 main .imagelist a:any-link {
   color: var(--text-color);

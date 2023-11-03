@@ -3,16 +3,18 @@
  */
 export default async function decorate(block) {
   const sidebar = block.querySelector('.sidebar');
+  const div = document.createElement('div');
   const content = document.createElement('div');
   content.classList.add('content');
+  div.append(content);
 
   [...sidebar.children].forEach((row) => {
     content.append(row);
   });
-  sidebar.append(content);
+  console.log(div);
 
   const ul = document.createElement('ul');
-  [...sidebar.querySelectorAll('h3')].forEach((section) => {
+  [...content.querySelectorAll('h3')].forEach((section) => {
     const li = document.createElement('li');
     li.innerHTML = `<a href='#${section.getAttribute('id')}'>${section.textContent}</a>`;
     ul.append(li);
@@ -22,5 +24,6 @@ export default async function decorate(block) {
   bar.classList.add('navigation');
   bar.innerHTML = '<strong>Sections</strong>';
   bar.append(ul);
-  sidebar.append(bar);
+  div.append(bar);
+  sidebar.append(div);
 }

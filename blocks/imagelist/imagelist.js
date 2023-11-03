@@ -7,22 +7,6 @@ function getMetadata(name, doc) {
 }
 
 /**
- * Loads a fragment.
- * @param {string} path The path to the fragment
- * @returns {Document} The document
- */
-async function loadFragment(path) {
-  if (path && path.startsWith('/')) {
-    const resp = await fetch(path);
-    if (resp.ok) {
-      const parser = new DOMParser();
-      return parser.parseFromString(await resp.text(), 'text/html');
-    }
-  }
-  return null;
-}
-
-/**
  * @param {HTMLElement} block The header block element
  */
 export default async function decorate(block) {
@@ -44,7 +28,6 @@ export default async function decorate(block) {
         const heroPicture = createOptimizedPicture(image);
         const url = getMetadata('og:url', doc);
         const { pathname } = new URL(url);
-       
         const card = document.createElement('div');
         card.classList.add('card');
 
@@ -66,8 +49,8 @@ export default async function decorate(block) {
         const a = document.createElement('a');
         a.href = doc.querySelector('link').href;
         a.appendChild(card);
-        const pathCard = block.querySelector(`[data-path='${pathname}']`);       
-        pathCard && pathCard.appendChild(a);
+        const pathCard = block.querySelector(`[data-path='${pathname}']`);
+        if (pathCard) pathCard.appendChild(a);
       }
     });
   });
