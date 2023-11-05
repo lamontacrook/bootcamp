@@ -12,29 +12,13 @@ main .hero {
   position: relative;
   padding: 32px;
   min-height: 300px;
-  height: 100vh;
 }
 
-main .hero .content {
-  text-align: center;
+main .hero h1 {
   max-width: 1200px;
-  position: absolute;
-  top:40%;
+  margin-left: auto;
+  margin-right: auto;
   color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-main .hero .content .seperator {
-  width: 128px;
-  height: 5px;
-  display: block;
-  content: "";
-  background-color: #ffc719;
-  transition: width .4s ease-in-out;
-  margin: auto;
 }
 
 main .hero picture {
