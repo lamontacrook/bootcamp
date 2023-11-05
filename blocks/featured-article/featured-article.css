@@ -1,0 +1,52 @@
+/* stylelint-disable */
+
+
+.featured-article {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.featured-article .image {
+  display: flex;
+  -webkit-box-orient: vertical;
+  flex-direction: column;
+  flex: 2;
+}
+
+.featured-article .image picture {
+  width: 100%;
+  height: 100%;
+}
+
+.featured-article .image img {
+  margin-top: 0;
+  margin-bottom: 0;
+  object-fit: cover;
+  object-position: top;
+  width: 100%;
+  height: 100%;
+}
+
+.featured-article .text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #ebebeb;
+  padding: 3.5em 2em 2em;
+}
+
+.featured-article .text p {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.75;
+}
+
+.featured-article .text p.pretitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.75;
+}
