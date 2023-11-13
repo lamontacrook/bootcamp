@@ -1,1 +1,53 @@
 /* below the fold CSS goes here */
+
+@font-face {
+  font-display: block;
+  font-family: wknd-icon-font;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./fonts/wknd-icon-font.ttf) format("truetype"),
+    url(./fonts/wknd-icon-font.woff) format("woff"),
+    url(./fonts/wknd-icon-font.svg#wknd-icon-font) format("svg")
+}
+
+@font-face {
+  font-display: block;
+  font-family: adobe-clean-regular;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./fonts/AdobeClean-Regular.ttf) format("truetype")
+}
+
+@font-face {
+  font-display: block;
+  font-family: adobe-clean-light;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./fonts/AdobeClean-Light.ttf) format("truetype")
+}
+
+@font-face {
+  font-display: block;
+  font-family: wknd-icon-font;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./media/fonts/wknd-icon-font.ttf) format("truetype"),
+    url(./media/fonts/wknd-icon-font.woff) format("woff"),
+    url(./media/fonts/wknd-icon-font.svg#wknd-icon-font) format("svg")
+}
+
+[class$=-icon],
+[class$=__icon],
+[class*=-icon],
+[class*=__icon] {
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: wknd-icon-font !important;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: none
+}
